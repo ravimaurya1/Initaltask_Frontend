@@ -7,7 +7,7 @@ const getSessionId = gql`
     }
 `;
 
-const SetSessionId = () =>{
+const SetSessionId = (props) =>{
     const {loading, error, data} = useQuery(getSessionId,{
         variables:{
             id: '123'
@@ -25,7 +25,7 @@ const SetSessionId = () =>{
     document.cookie = "sessionId="+ data.sessionId;
     document.cookie = "expires="+ tommorow.toUTCString() + ";"
 
-    console.log("Next day date",tommorow);
+    props.setSession(data.sessionId);
 
     console.log(data.sessionId);
 
