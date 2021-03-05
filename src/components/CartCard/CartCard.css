@@ -1,0 +1,15 @@
+.CartCard img {
+  width: 150px;
+}
+.CartCard {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  width: 90%;
+  box-shadow: 5px 5px 10px grey;
+}
+.CartCard .Price {
+  margin-left: 15rem;
+  padding: 0.5rem;
+}

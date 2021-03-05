@@ -1,0 +1,22 @@
+.Details {
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: white;
+  box-shadow: 5px 5px 10px grey;
+  padding: 1rem;
+}
+
+.Details hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Details .question h2 {
+  margin-bottom: 1rem;
+}
+
+.Details .question h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

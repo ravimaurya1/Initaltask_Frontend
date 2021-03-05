@@ -1,0 +1,11 @@
+.ProductsList {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+  background-color: white;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: 5px 5px 10px grey;
+  overflow-x: scroll;
+}

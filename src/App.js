@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Banner from "./components/Banner/Banner";
+import LoginMenu from "./components/LoginMenu/LoginMenu";
+import Menu from "./components/Menu/Menu";
+import Footer from "./components/Footer/Footer";
+import { Route, Switch} from "react-router-dom";
+import Product from "./components/Product/Product";
+import Cart from "./components/Cart/Cart";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Banner />
+      <LoginMenu />
+      <Menu />
+      <Switch>
+        <Route path="/" exact component={Product} />
+        <Route path="/cart" exact component={Cart} />
+      </Switch>
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;

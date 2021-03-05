@@ -1,0 +1,46 @@
+.perimeter {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.image {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.copy {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+@media (min-width: 415px) {
+  /* .perimeter {
+    flex-direction: row;
+  } */
+
+  .image {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  .image {
+    flex: 0 0 33.5%;
+  }
+}
+
+.Image .ImageList img {
+  width: 100px;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  cursor: pointer;
+}
+
+.Image .ImageList {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 3rem;
+}

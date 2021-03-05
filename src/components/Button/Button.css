@@ -1,0 +1,25 @@
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #5ac6c7;
+}
+.secondary {
+  background-color: #fa4c5e;
+  color: black;
+}
+.success {
+  background-color: green;
+}
+.danger {
+  background-color: red;
+}

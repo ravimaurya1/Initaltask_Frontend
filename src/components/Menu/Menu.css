@@ -1,0 +1,45 @@
+.Menu {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.Item ul {
+  display: flex;
+  padding-top: 0.9rem;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.Search {
+  padding-top: 0.3rem;
+}
+
+.Item ul li {
+  padding-left: 1.3rem;
+}
+
+.sub-menu-1 {
+  display: none;
+}
+
+.Item ul li:hover {
+  color: #5ac6c7;
+}
+
+.Item ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: white;
+  color: black;
+  z-index: 10;
+  padding: 2rem;
+}
+.Item ul li:hover .sub-menu-1 .menu-item {
+  display: flex;
+  justify-content: flex-start;
+}
+.Item ul li:hover .sub-menu-1 .menu-item div ul {
+  display: flex;
+  flex-direction: column;
+}

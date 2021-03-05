@@ -1,0 +1,25 @@
+.ProductInfo {
+  display: flex;
+  margin-bottom: 2rem;
+  box-shadow: 5px 5px 10px grey;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.ProductInfo .ProductImage {
+  width: 50%;
+  height: 100vh;
+}
+.ProductInfo .Info {
+  width: 50%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.Product {
+  margin-top: 3rem;
+}
+
+.SimilarProducts h2 {
+  margin-left: 2rem;
+}

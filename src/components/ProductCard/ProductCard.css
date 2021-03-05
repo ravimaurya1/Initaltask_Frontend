@@ -1,0 +1,12 @@
+.Card img {
+  width: 200px;
+}
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  border: 1px solid grey;
+  padding: 1rem;
+  cursor: pointer;
+}

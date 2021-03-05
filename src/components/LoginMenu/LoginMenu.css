@@ -1,0 +1,59 @@
+.sellbutton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f16c79;
+  margin-top: 2rem;
+}
+.sellbutton:hover {
+  background-color: #fa4c5e;
+}
+
+.loginmenu {
+  display: flex;
+  justify-content: space-evenly;
+  height: 110px;
+  overflow-y: hidden;
+  background-color: white;
+}
+.login_cart {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+}
+
+.quikr {
+  height: 100px;
+}
+
+.zefo {
+  height: 150px;
+}
+
+.login_cart img {
+  height: 30px;
+}
+
+.logo p {
+  margin-top: 3.5rem;
+}
+
+.login_cart {
+  margin-top: 2.4rem;
+}
+
+.login_cart a {
+  padding-left: 2.1rem;
+}
+.logo hr {
+  margin-top: 45px;
+  height: 40px;
+}
