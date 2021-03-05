@@ -34,7 +34,7 @@ const Productinfo = (props) => {
   const { name, condition, offerPrice, price, title, availability } = data.info;
   const metaInfo = data.info.metaInfo;
 
-  console.log("metaInfo", metaInfo);
+  // console.log("metaInfo", metaInfo);
   return (
     <div className="Productinfo">
       <Helmet>

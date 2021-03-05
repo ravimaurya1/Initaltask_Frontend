@@ -6,10 +6,15 @@ import Footer from "./components/Footer/Footer";
 import { Route, Switch} from "react-router-dom";
 import Product from "./components/Product/Product";
 import Cart from "./components/Cart/Cart";
+import SetSessionId from './helper/setSessionId';
 
 const App = () => {
+  
   return (
     <>
+    {/* Saving the session ID if it is not available in cookie */}
+    {document.cookie ? (null) : <SetSessionId />}
+    {/* <SetSessionId /> */}
       <Banner />
       <LoginMenu />
       <Menu />
