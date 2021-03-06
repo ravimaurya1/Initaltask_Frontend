@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import GetSessionId from '../../helper/getSessionId';
 import { useQuery, gql, NetworkStatus} from "@apollo/client";
 import {useHistory} from 'react-router-dom';
+import emptycart from '../../assets/img/Emptycart.png';
 
 let CART_INFO = gql`
   query cart_info($sessionId: ID!){
@@ -45,6 +46,18 @@ const Cart = () => {
   if (error) return <div>Error</div>;
 
   const {getcart} = data;
+
+  if(getcart.length === 0){
+    return (
+      <div className = "CartEmpty">
+        <h2>Your Cart is Empty</h2>
+        <img src = {emptycart}/>
+        <Link to="/">
+            <button className="ContinueShopping">CONTINUE SHOPPING</button>
+          </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="Cart">

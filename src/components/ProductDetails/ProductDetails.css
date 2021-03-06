@@ -20,3 +20,33 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+/* Detail Section Styling */
+.DetailsDiv{
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  height: 15rem;
+}
+
+.DetailsDiv .mainSection{
+  margin-top: 3rem;
+}
+
+.DetailsDiv button{
+  font-size: 1rem;
+  width: 9rem;
+  height: 2.5rem;
+}
+
+.DetailsSection{
+  display: flex;
+}
+
+.DetailsSection .DimensionImage img{
+  width: 350px;
+}
+
+.WhiteBackground{
+  background-color: white;
+  color:#5ac6c7;
+}
