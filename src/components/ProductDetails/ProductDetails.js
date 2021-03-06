@@ -52,9 +52,11 @@ const ProductDetails = (props) => {
     return(
     <div className = "DetailsSection">
       <div className = "DimensionImage">
+        <h4>Dimension Image</h4>
         <img src = {DimensionImage} />
       </div>
       <div className="info">
+        <h4>Details</h4>
         <p>Dimension:-{Dimension}</p>
         <p>Color: {Color}</p>
         <p>Material: {Material}</p>

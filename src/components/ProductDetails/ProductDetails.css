@@ -46,7 +46,31 @@
   width: 350px;
 }
 
+.DetailsSection .info p{
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-left: 4rem;
+}
+.DetailsSection .info h4{
+  padding-bottom: .5rem;
+  margin-left: 4rem;
+}
+
 .WhiteBackground{
   background-color: white;
   color:#5ac6c7;
+  border-bottom: 2px;
+}
+
+/* Softness in Details */
+.Softness{
+  display: flex;
+}
+
+.Softness img{
+  margin-left: 4rem;
+}
+
+.Softness p{
+  margin-left: 1rem !important;
 }
