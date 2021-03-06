@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import "./Cart.css";
 import CartCard from "../CartCard/CartCard";
 import { Link } from "react-router-dom";
 import GetSessionId from '../../helper/getSessionId';
-import { useQuery, gql} from "@apollo/client";
+import { useQuery, gql, NetworkStatus} from "@apollo/client";
+import {useHistory} from 'react-router-dom';
 
-const CART_INFO = gql`
+let CART_INFO = gql`
   query cart_info($sessionId: ID!){
     getcart(sessionId: $sessionId){
       id
@@ -26,25 +27,38 @@ const Cart = () => {
   // });
   const [total, setTotal] = useState(0);
   const sessionId = GetSessionId();
+  
+  let history = useHistory();
 
-  const { loading, error, data } = useQuery(CART_INFO, {
-    variables: { sessionId: "c795a44e-0652-407b-acb9-9547169d7e6e"},
+  const { loading, error, data, refetch, networkStatus} = useQuery(CART_INFO, {
+    variables: { sessionId: sessionId},
+    notifyOnNetworkStatusChange: true,
+
   });
 
+  useEffect(() =>{
+    refetch();
+  },[history]);
+
+  if(networkStatus === NetworkStatus.refetch) return <div>Refetching</div>;
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error</div>;
 
+  const {getcart} = data;
+
   return (
     <div className="Cart">
-      {console.log(data)}
       <div className="CartHeader">
         <h2>Order Summary</h2>
         <h3>Prompt Delivery | 100% Payment Protection | Hassle-free Returns</h3>
       </div>
       <div className="CartInfo">
         <div className="AllCart">
-          <CartCard pid={401949} setTotal={setTotal} />
-          <CartCard pid={401949} setTotal={setTotal} />
+          {getcart.map((product,index) =>{
+            return (
+              <CartCard key={index} pid = {product.id} setTotal = {setTotal}/>
+            );
+          } )}
         </div>
         <div className="Total">
           <h3>Price Details</h3>

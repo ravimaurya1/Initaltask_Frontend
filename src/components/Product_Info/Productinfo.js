@@ -4,6 +4,7 @@ import "./Productinfo.css";
 import bazar from "../../assets/img/quikrbazaar.png";
 import { Helmet } from "react-helmet";
 import GetSessionId from '../../helper/getSessionId';
+import {useHistory} from 'react-router-dom';
 
 const PROD_INFO = gql`
   query prod_info($id: ID!) {
@@ -24,7 +25,7 @@ const PROD_INFO = gql`
 
 const ADD_CART = gql`
   mutation add_cart($sessionId: ID!, $productId: ID!){
-    addToCart(sessionId: sessionId, productId: productId)
+    addToCart(sessionId: $sessionId, productId: $productId)
   }
 `;
 
@@ -36,10 +37,12 @@ const Productinfo = (props) => {
   // Mutation Hooks from Apollo Client
   const [add_to_cart,{data:data_mutaion}] = useMutation(ADD_CART);
 
+  let history = useHistory();
 
   // Buy Now Button to add in Cart
   const addToCart = () => {
     add_to_cart({variables:{sessionId: sessionId, productId:props.pid}});
+    history.push('/cart');
   };
 
   if (loading) return <div>Loading...</div>;
