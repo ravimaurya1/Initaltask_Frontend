@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useMutation } from "@apollo/client";
 import "./Productinfo.css";
 import bazar from "../../assets/img/quikrbazaar.png";
 import { Helmet } from "react-helmet";
+import GetSessionId from '../../helper/getSessionId';
 
 const PROD_INFO = gql`
   query prod_info($id: ID!) {
@@ -20,13 +21,26 @@ const PROD_INFO = gql`
     }
   }
 `;
+
+const ADD_CART = gql`
+  mutation add_cart($sessionId: ID!, $productId: ID!){
+    addToCart(sessionId: sessionId, productId: productId)
+  }
+`;
+
 const Productinfo = (props) => {
+  const sessionId = GetSessionId();
   const { loading, error, data } = useQuery(PROD_INFO, {
     variables: { id: props.pid },
   });
+  // Mutation Hooks from Apollo Client
+  const [add_to_cart,{data:data_mutaion}] = useMutation(ADD_CART);
+
 
   // Buy Now Button to add in Cart
-  const addToCart = () => {};
+  const addToCart = () => {
+    add_to_cart({variables:{sessionId: sessionId, productId:props.pid}});
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error!</div>;
@@ -51,7 +65,7 @@ const Productinfo = (props) => {
           <div className="BuyNow">
             <h2>Rs. {offerPrice}</h2>
             <h4>Est original Rs.{price}</h4>
-            <button className="BuyNowButton">BUY NOW</button>
+            <button className="BuyNowButton" onClick = {() => addToCart(props.pid)}>BUY NOW</button>
           </div>
           <hr />
           <div className="offer">
