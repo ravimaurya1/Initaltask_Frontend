@@ -10,3 +10,8 @@
   padding: 1rem;
   cursor: pointer;
 }
+
+.ProductLink{
+  text-decoration: none;
+  color: black;
+}

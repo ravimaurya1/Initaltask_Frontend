@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from "react";
 import "./Cart.css";
-import CartCard from "../CartCard/CartCard";
+import CartCard from '../../components/CartCard/CartCard';
 import { Link } from "react-router-dom";
 import GetSessionId from '../../helper/getSessionId';
 import { useQuery, gql, NetworkStatus} from "@apollo/client";
