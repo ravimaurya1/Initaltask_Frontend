@@ -5,6 +5,8 @@ import bazar from "../../assets/img/quikrbazaar.png";
 import { Helmet } from "react-helmet";
 import GetSessionId from '../../helper/getSessionId';
 import {useHistory} from 'react-router-dom';
+import calendar from '../../assets/img/calendar.png';
+import card from '../../assets/img/Card.png';
 
 const PROD_INFO = gql`
   query prod_info($id: ID!) {
@@ -19,6 +21,15 @@ const PROD_INFO = gql`
         title
         description
       }
+      startingEmi
+      paymentModeAvailableText
+      SeatingHeight
+      subCategoryType
+      details{
+        Dimension
+        Color
+      }
+
     }
   }
 `;
@@ -48,7 +59,7 @@ const Productinfo = (props) => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error!</div>;
 
-  const { name, condition, offerPrice, price, title, availability } = data.info;
+  const { name, condition, offerPrice, price, title, availability, startingEmi, paymentModeAvailableText,SeatingHeight,subCategoryType } = data.info;
   const metaInfo = data.info.metaInfo;
 
   // console.log("metaInfo", metaInfo);
@@ -65,16 +76,27 @@ const Productinfo = (props) => {
       </div>
       {availability ? (
         <div>
+          
           <div className="BuyNow">
             <h2>Rs. {offerPrice}</h2>
             <h4>Est original Rs.{price}</h4>
+            <div className="emi">
+              <img src={calendar}/>
+            <p>EMI from Rs. {startingEmi}</p>
+          </div>
             <button className="BuyNowButton" onClick = {() => addToCart(props.pid)}>BUY NOW</button>
           </div>
+          <div className="Payment">
+            <img src={card}/>
+            <p>{paymentModeAvailableText}</p>
+          </div>
           <hr />
+          
           <div className="offer">
             <h2>Offer</h2>
             <hr />
           </div>
+         
           <div className="ZefoAssessment">
             <h3>ZEFO ASSESSMENT</h3>
             <p>
@@ -101,6 +123,13 @@ const Productinfo = (props) => {
                 SCHEDULE NOW
               </button>
             </form>
+          </div>
+          <div className="ProductDetailSection">
+            <h3>Key Features</h3>
+            <p>Condition: {condition}</p>
+            <p>Seating Height: {SeatingHeight}</p>
+            <p>Sub Category Type: {subCategoryType}</p>
+            <p></p>
           </div>
         </div>
       ) : (

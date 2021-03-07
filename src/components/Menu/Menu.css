@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-around;
   background-color: white;
+  padding-top: 4px;
+  padding-bottom: 9px;
 }
 
 .Item ul {
@@ -25,9 +27,11 @@
 
 .Item ul li:hover {
   color: #5ac6c7;
+  cursor: pointer;
 }
 
 .Item ul li:hover .sub-menu-1 {
+  box-shadow: 2px 2px 14px grey;
   display: block;
   position: absolute;
   background: white;

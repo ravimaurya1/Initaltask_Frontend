@@ -41,6 +41,16 @@
 
 .Image .ImageList {
   display: flex;
-  overflow-x: scroll;
-  margin-top: 3rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
 }
+
+.border-insert{
+  border: 3px solid skyblue;
+}
+
+.Image .text h4{
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+

@@ -35,6 +35,15 @@ const Product = () => {
         <h2>Similar Products</h2>
         <SimilarProducts pid={pid} setPid={setPid} />
       </div>
+      <div className = "Video">
+        <div>
+        <h4>BEHIND THE SCENES</h4>
+        <h3>FROM USED TO READY TO USE</h3>
+        </div>
+        <div className="youtube">
+      <iframe width="727" height="400" src="https://www.youtube.com/embed/kldi4UceiGk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      </div>
     </div>
   );
 };

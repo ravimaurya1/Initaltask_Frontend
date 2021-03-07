@@ -23,3 +23,16 @@
 .SimilarProducts h2 {
   margin-left: 2rem;
 }
+
+.Product .Video .youtube{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.Product .Video h3{
+  margin-left: 4rem;
+  margin-bottom: 2rem;
+  padding-top:.5rem;
+}
+.Product .Video h4{
+  margin-left: 4rem;
+}

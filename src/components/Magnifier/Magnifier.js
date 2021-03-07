@@ -48,6 +48,9 @@ const Magnifier = (props) => {
           />
         </div>
       </div>
+      <div className ="text">
+        <h4>Product Image</h4>
+      </div>
       <div className="ImageList">
         {data.info.imageLinks.map((image, index) => {
           return (
@@ -55,6 +58,7 @@ const Magnifier = (props) => {
               src={image}
               key={index}
               onClick={() => setSelectedImage(index)}
+              className={selectedImage === index ? "border-insert":" "}
             />
           );
         })}

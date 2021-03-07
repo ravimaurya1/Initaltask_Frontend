@@ -18,7 +18,7 @@
 }
 
 .Productinfo {
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-top: 1rem;
   background-color: white;
 }
@@ -28,12 +28,19 @@
 }
 
 .Productinfo .header h3 {
+  color: rgb(148, 147, 147);
+  padding-top: .8rem;
   padding-bottom: 1rem;
 }
 
 .Productinfo .ZefoAssessment {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.Productinfo .ZefoAssessment p{
+  padding-top: 4px;
+  font-size: 15px;
 }
 
 .Productinfo .ZefoExperienceZone {
@@ -65,13 +72,13 @@
   margin-left: 10rem;
   margin-right: 1rem;
   height: 2rem;
-  width: 12rem;
+  width: 10rem;
 }
 
 .Productinfo .ZefoExperienceZone .phone {
   margin-right: 2rem;
   height: 2rem;
-  width: 12rem;
+  width: 10rem;
 }
 
 .schedule {
@@ -89,4 +96,40 @@
   width: 15rem;
   margin-bottom: 1rem;
   margin-left: 20rem;
+}
+
+.Productinfo .emi{
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.Productinfo .emi img{
+  width: 20px;
+  margin-right: 1rem;
+}
+
+.Payment{
+  display: flex;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+  align-items: center;
+}
+
+.Payment img{
+  width: 40px;
+}
+
+.Productinfo .ProductDetailSection{
+  margin-top: 1rem;
+}
+
+.Productinfo .ProductDetailSection p{
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  font-size: 13px;
+}
+
+hr{
+  color: rgb(238, 232, 232);
 }

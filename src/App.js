@@ -7,6 +7,7 @@ import { Route, Switch} from "react-router-dom";
 import Product from './pages/Product/Product';
 import Cart from './pages/Cart/Cart';
 import SetSessionId from './helper/setSessionId';
+import './App.css';
 
 const App = () => {
   const [session, setSession] = useState('');

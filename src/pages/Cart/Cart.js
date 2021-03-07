@@ -16,12 +16,6 @@ let CART_INFO = gql`
   }
 `;
 
-// const ravi = gql`
-//   query ravi($id: ID!){
-//     yes(id: $id)
-//   }
-// `;
-
 const Cart = () => {
   // const {loading, error ,data} = useQuery(ravi,{
   //   variables:{id: 123},

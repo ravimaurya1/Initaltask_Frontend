@@ -21,8 +21,8 @@ const CartCard = (props) => {
   });
 
   useEffect(() => {
-    if(data){
-    props.setTotal((total) => total + data.info.offerPrice);
+    if (data) {
+      props.setTotal((total) => total + data.info.offerPrice);
     }
   }, [data]);
 
@@ -43,12 +43,14 @@ const CartCard = (props) => {
       <div className="Img">
         <img src={imageLinks[0]} />
       </div>
-      <div className="Product name">
-        <h3>{name}</h3>
-      </div>
-      <div className="Price">
-        <h3>Rs. {offerPrice}</h3>
-        <h4>Original Rs. {price}</h4>
+      <div className="priceinfo">
+        <div className="Product name">
+          <h3>{name}</h3>
+        </div>
+        <div className="Price">
+          <h3>Rs. {offerPrice}</h3>
+          <h4>Original Rs. {price}</h4>
+        </div>
       </div>
     </div>
   );

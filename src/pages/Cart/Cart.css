@@ -76,3 +76,14 @@
 .CartEmpty button:hover{
   background-color: rgb(235, 88, 88);
 }
+
+.Cart .Total h3{
+  margin-top: 1rem;
+}
+
+.Cart .Total p{
+  margin-top: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(197, 120, 120);
+}
